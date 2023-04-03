@@ -9,7 +9,7 @@ from datetime import datetime
 import sys
 import time
 
-version = "1"
+version = "1.0"
 seperator = "----------------------------------------"
 spacer = "                                        "
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
