@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Raindrop_metalfoxdev"
+name = "Raindrop"
 version = "1.0"
 authors = [
   { name="metalfoxdev"},
