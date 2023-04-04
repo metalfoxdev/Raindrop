@@ -17,7 +17,7 @@ echo getting logo
 curl -o icon.png "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/assets/logo.png"
 clear
 echo getting main.py
-curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/main.py"
+curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/v1.0/main.py"
 clear
 echo writing desktop file
 echo "[Desktop Entry]" >> raindrop.desktop
