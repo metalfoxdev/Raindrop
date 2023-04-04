@@ -14,7 +14,7 @@ mkdir RaindropWeather
 echo entering raindrop app folder
 cd RaindropWeather
 echo getting logo
-curl "https://github.com/metalfoxdev/Raindrop/raw/main/assets/logo.png" >> icon.png
+curl -0 icon.png "https://github.com/metalfoxdev/Raindrop/raw/main/assets/logo.png"
 clear
 echo writing desktop file
 echo "[Desktop Entry]" >> raindrop.desktop
@@ -22,7 +22,7 @@ echo "Version=1.0" >> raindrop.desktop
 echo "Name=Raindrop" >> raindrop.desktop
 echo "Comment=A slick and intuitive weather app for the Linux terminal" >> raindrop.desktop
 echo "Exec=python3 main.py" >> raindrop.desktop
-echo "Icon=/home/$usrname/.local/share/RaindropWeather/icon.png"
+echo "Icon=/home/$usrname/.local/share/RaindropWeather/icon.png" >> raindrop.desktop
 echo "Path=/home/$usrname/.local/share/RaindropWeather" >> raindrop.desktop
 echo "Terminal=true" >> raindrop.desktop
 echo "Type=Application" >> raindrop.desktop
