@@ -247,9 +247,8 @@ while True:
     if os.path.isfile("raindrop.config"):
         cs()
         gh_version = requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/version.txt").content
-        gh_version = gh_version.replace("b", "").replace("\n", "").replace("'", "")
-        input("")
-        if version == str(gh_version):
+        gh_version = gh_version.decode("utf-8").rstrip()
+        if str(version) == str(gh_version):
             pass
         else:
             print("Updating Raindrop...")
