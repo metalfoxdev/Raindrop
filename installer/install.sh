@@ -16,6 +16,9 @@ cd RaindropWeather
 echo getting logo
 curl -o icon.png "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/assets/logo.png"
 clear
+echo getting main.py
+curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/main.py"
+clear
 echo writing desktop file
 echo "[Desktop Entry]" >> raindrop.desktop
 echo "Version=1.0" >> raindrop.desktop
@@ -27,3 +30,7 @@ echo "Path=/home/$usrname/.local/share/RaindropWeather" >> raindrop.desktop
 echo "Terminal=true" >> raindrop.desktop
 echo "Type=Application" >> raindrop.desktop
 echo "Categories=Utility;Application;" >> raindrop.desktop
+echo copying desktop file to applications
+mv "/home/$usrname/.local/share/RaindropWeather/raindrop.desktop" "/home/$usrname/.local/share/applications/raindrop.desktop"
+clear
+echo Installation complete!
