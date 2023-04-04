@@ -9,6 +9,7 @@ from datetime import datetime
 import sys
 import time
 import subprocess
+import plotext as plt
 
 version = "1.2"
 seperator = "----------------------------------------"
@@ -244,6 +245,12 @@ def create_daily_entry(date, month, day, weathercode, temperature_2m_min, temper
             output = colored(str(date) + "/" + str(month) + ": " + str(day) + " - " , "white") + wc_extract(weathercode).replace("-", "") + colored(", ", "white") + colored(str(temperature_2m_min), "blue") + colored("°C", "white") + colored(" : ", "white") + colored(str(temperature_2m_max), "light_red") + colored("°C", "white") + colored(", ", "white") + color_uv(uv_index_max) + colored(" UV, ", "white") + color_wind(windgusts_10m_max, wind_unit) + " " + colored(str(wind_unit), "white") + colored(", ", "white") + colored(str(precip_inch), "light_blue") + colored(str(precip_unit), "white") + colored(" (", "white") + colored(str(precipitation_probability_mean), "blue") + colored("%", "white") + colored(")", "white")
     return str(output)
 
+def list2float(list_obj):
+    output = []
+    for x in range(len(list_obj)):
+        output.append(float(list_obj[x]))
+    return output
+
 while True:
     if os.path.isfile("raindrop.config"):
         cs()
@@ -324,6 +331,7 @@ while True:
                 print(colored(seperator + "Forecasts for " + str(location_name) + seperator, "white"))
                 print(spacer + colored("[", "white") + colored("1", "light_green") + colored("]", "white") + colored(" Hourly", "light_yellow"))
                 print(spacer + colored("[", "white") + colored("2", "light_green") + colored("]", "white") + colored(" Daily", "light_yellow"))
+                print(spacer + colored("[", "white") + colored("3", "light_green") + colored("]", "white") + colored(" Hourly Charts", "light_yellow"))
                 ans = input("> ")
                 if ans == "quit":
                     cs()
@@ -343,6 +351,9 @@ while True:
                 elif ans == "2":
                     mode = "daily"
                     # implement daily forecast system. Show daily forecast but then give ability to see hourly for each day by selecting results.
+                elif ans == "3":
+                    mode = "charts"
+                    chart_mode = "hourly"
                 elif ans == "config":
                     cs()
                     print("Are you sure you want to reconfigure Raindrop?")
@@ -452,6 +463,32 @@ while True:
                         hourly_mode = 2
                 except ValueError:
                     pass
+            elif mode == "charts":
+                cs()
+                if chart_mode == "hourly":
+                    cs()
+                    temp = []
+                    times = []
+                    for x in range(len(json_extract(wjson, ["hourly", "time"])[0])):
+                        if datetime.fromisoformat(json_extract(wjson, ["hourly", "time"])[0][x]).day == calendar.day:
+                            temp.append(str(json_extract(wjson, ["hourly", "time"])[0][x]))
+                    for x in range(len(temp)):
+                        if datetime.fromisoformat(temp[x]).hour == calendar.hour:
+                            times.append("Now")
+                        if datetime.fromisoformat(temp[x]).hour > calendar.hour:
+                            times.append(str(datetime.fromisoformat(temp[x]).hour) + ":00")
+                    precip = []
+                    precip = list2float(json_extract(wjson, ["hourly", "rain"])[0])
+                    plt.simple_bar(times, precip, width = 100, title = "Rain Precipitation")
+                    plt.show()
+                    pass # continue building chart display systems
+                    ans = input("> ")
+                    if ans == "quit":
+                        cs()
+                        quit()
+                    elif ans == "back":
+                        mode = "main"
+
 
     else:
         cs()
