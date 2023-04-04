@@ -258,7 +258,7 @@ while True:
             os.remove("main.py")
             os.rename("new_main.py", "main.py")
             cs()
-            print("Update complete! \nPress ENTER to close Raindrop, you need to re open it when it closes...")
+            print("Update complete! \nPress ENTER to close Raindrop, you need to re-open it when it closes...")
             input("")
             quit()
         print("loading config...")
