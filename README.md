@@ -1,3 +1,4 @@
+![Logo Image][https://github.com/metalfoxdev/Raindrop/raw/main/assets/logo.png]
 # Raindrop
 Raindrop is a slick and intuitive, free and open source weather app for the linux terminal!
 
