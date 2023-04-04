@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Raindrop
+Comment=A slick and intuitive weather app for the Linux terminal
+Exec=python3 main.py
+Path=/path/to/app/folder
+Terminal=true
+Type=Application
+Categories=Utility;Application;
