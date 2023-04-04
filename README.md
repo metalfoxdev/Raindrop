@@ -10,3 +10,21 @@ APT (Ubuntu, Debian and its associates):
 ```
 sudo apt install python3-pip
 ```
+
+DNF (CentOS 8 and newer, Fedora and Red Hat):
+
+```
+sudo dnf install python3
+```
+
+pacman (Arch Linux, Manjaro and its associates):
+
+```
+sudo pacman -S python-pip
+```
+
+zypper (OpenSUSE):
+
+```
+sudo zypper install python3-pip
+```
