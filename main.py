@@ -247,8 +247,7 @@ while True:
     if os.path.isfile("raindrop.config"):
         cs()
         gh_version = requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/version.txt").content
-        print(str(gh_version))
-        print(version)
+        gh_version = gh_version.replace("b", "").replace("\n", "").replace("'", "")
         input("")
         if version == str(gh_version):
             pass
