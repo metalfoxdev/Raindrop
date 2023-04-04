@@ -1,6 +1,6 @@
-version="1.0"
+version="1.2"
 clear
-echo RaindropInstaller for v1.1
+echo RaindropInstaller for v$version
 echo WARNING: Before running this installer, ensure python3 and pip are installed on your system. \ Press ENTER to continue...
 read
 echo Installing pip dependencies...
@@ -18,7 +18,7 @@ echo getting logo
 curl -o icon.png "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/assets/logo.png"
 clear
 echo getting main.py
-curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/v1.1/main.py"
+curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/v$version/main.py"
 clear
 echo writing desktop file
 echo "[Desktop Entry]" >> raindrop.desktop
