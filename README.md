@@ -39,7 +39,7 @@ zypper (OpenSUSE):
 sudo zypper install python3-pip
 ```
 
-2. Download the install.sh script from this link
+2. Download the install.sh script from [this link](https://github.com/metalfoxdev/Raindrop/releases/latest/download/install.sh)
 3. Run the script to install Raindrop
 
 # Uninstall Raindrop
