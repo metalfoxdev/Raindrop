@@ -1,5 +1,6 @@
+version="1.0"
 clear
-echo RaindropInstaller for v1.0
+echo RaindropInstaller for v1.1
 echo WARNING: Before running this installer, ensure python3 and pip are installed on your system. \ Press ENTER to continue...
 read
 echo Installing pip dependencies...
@@ -17,11 +18,11 @@ echo getting logo
 curl -o icon.png "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/assets/logo.png"
 clear
 echo getting main.py
-curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/v1.0/main.py"
+curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/v1.1/main.py"
 clear
 echo writing desktop file
 echo "[Desktop Entry]" >> raindrop.desktop
-echo "Version=1.0" >> raindrop.desktop
+echo "Version=$version" >> raindrop.desktop
 echo "Name=Raindrop" >> raindrop.desktop
 echo "Comment=A slick and intuitive weather app for the Linux terminal" >> raindrop.desktop
 echo "Exec=python3 main.py" >> raindrop.desktop

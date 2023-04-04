@@ -9,7 +9,7 @@ from datetime import datetime
 import sys
 import time
 
-version = "1.0"
+version = "1.1"
 seperator = "----------------------------------------"
 spacer = "                                        "
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -344,7 +344,8 @@ while True:
                     if ans == "1":
                         cs()
                         os.remove("raindrop.config")
-                        print("config deleted, re-run Raindrop to set it up again!")
+                        print("config deleted, re-run Raindrop to set it up again! \nPress ENTER to close Raindrop!")
+                        input("")
                         quit()
                     else:
                         pass
