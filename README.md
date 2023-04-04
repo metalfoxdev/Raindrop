@@ -1,7 +1,15 @@
 ![Banner Image](/assets/banner.png?raw=true "Banner Image")
 
 # Raindrop
-Raindrop is a slick and intuitive, free and open source weather app for the linux terminal!
+Raindrop is a slick and intuitive, free and open source weather app for the linux terminal! It aims to be as simple as possible whilst adding useful features!
+
+# Features
+
+* 🌡️ Accurate forecast and location search from the Open Meteo API, be ready for anything, 🌧️ rain or ☀️ shine!
+* 👍 Simple and easy-to-use interface, no bloat here!
+* 🗓️ Daily and Hourly forecasts for up to 7 days, we got you covered!
+* 😃 Intuitive weather display system, colour coding and all!
+* ⛔ No ads, tracking or analytics, just the weather and nothing else!
 
 ## Installation
 
@@ -37,4 +45,5 @@ sudo zypper install python3-pip
 # Uninstall Raindrop
 
 To uninstall Raindrop, simply delete the folder it created in /home/YOUR_USER_HERE/.local/share/RaindropWeather and the desktop file in your applications folder
+
 <a href="https://www.flaticon.com/free-icons/rain" title="rain icons">Rain icons created by iconixar - Flaticon</a>
