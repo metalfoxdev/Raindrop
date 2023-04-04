@@ -31,3 +31,5 @@ sudo zypper install python3-pip
 
 2. Download the install.sh script from this link
 3. Run the script to install Raindrop
+
+<a href="https://www.flaticon.com/free-icons/rain" title="rain icons">Rain icons created by iconixar - Flaticon</a>
