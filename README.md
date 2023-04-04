@@ -7,6 +7,6 @@ Raindrop is a slick and intuitive, free and open source weather app for the linu
 
 APT (Ubuntu, Debian and its associates):
 
-'''
+```
 sudo apt install python3-pip
-'''
+```
