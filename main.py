@@ -246,14 +246,14 @@ def create_daily_entry(date, month, day, weathercode, temperature_2m_min, temper
 while True:
     if os.path.isfile("raindrop.config"):
         cs()
-        gh_version = requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/version.txt").content
+        gh_version = requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/latest/version.txt").content
         gh_version = gh_version.decode("utf-8").rstrip()
         if str(version) == str(gh_version):
             pass
         else:
             print("Updating Raindrop...")
             f = open("new_main.py", "wb")
-            f.write(requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/main.py").content)
+            f.write(requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/latest/main.py").content)
             f.close()
             os.remove("main.py")
             os.rename("new_main.py", "main.py")
