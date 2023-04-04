@@ -8,8 +8,9 @@ import pyfiglet
 from datetime import datetime
 import sys
 import time
+import subprocess
 
-version = "1.1"
+version = "1.2"
 seperator = "----------------------------------------"
 spacer = "                                        "
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -257,6 +258,13 @@ while True:
             f.close()
             os.remove("main.py")
             os.rename("new_main.py", "main.py")
+            cs()
+            pip_depends = requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/latest/pip_depends.txt").content
+            pip_depends = pip_depends.decode("utf-8").rstrip()
+            pip_depends = pip_depends.split(" ")
+            print("Updating Dependencies...")
+            for x in range(len(pip_depends)):
+                subprocess.run(["pip3", "install", "--upgrade", str(pip_depends[x])])
             cs()
             print("Update complete! \nPress ENTER to close Raindrop, you need to re-open it when it closes...")
             input("")
