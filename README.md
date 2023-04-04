@@ -34,4 +34,7 @@ sudo zypper install python3-pip
 2. Download the install.sh script from this link
 3. Run the script to install Raindrop
 
+# Uninstall Raindrop
+
+To uninstall Raindrop, simply delete the folder it created in /home/YOUR_USER_HERE/.local/share/RaindropWeather and the desktop file in your applications folder
 <a href="https://www.flaticon.com/free-icons/rain" title="rain icons">Rain icons created by iconixar - Flaticon</a>

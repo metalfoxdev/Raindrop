@@ -251,7 +251,7 @@ while True:
             pass
         else:
             print("Updating Raindrop...")
-            f = open("new_main.py", "w")
+            f = open("new_main.py", "wb")
             f.write(requests.get("https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/main.py").content)
             f.close()
             os.remove("main.py")
