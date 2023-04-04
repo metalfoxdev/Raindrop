@@ -1,4 +1,4 @@
-![Logo Image](/Raindrop/assets/logo.png?raw=true "Logo Image")
+![Logo Image](/assets/logo.png?raw=true "Logo Image")
 
 # Raindrop
 Raindrop is a slick and intuitive, free and open source weather app for the linux terminal!
