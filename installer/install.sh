@@ -14,8 +14,8 @@ mkdir RaindropWeather
 echo entering raindrop app folder
 cd RaindropWeather
 echo getting logo
-curl -O icon.png "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/assets/logo.png"
-# clear
+curl -o icon.png "https://raw.githubusercontent.com/metalfoxdev/Raindrop/main/assets/logo.png"
+clear
 echo writing desktop file
 echo "[Desktop Entry]" >> raindrop.desktop
 echo "Version=1.0" >> raindrop.desktop
