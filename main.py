@@ -479,9 +479,16 @@ while True:
                             times.append(str(datetime.fromisoformat(temp[x]).hour) + ":00")
                     precip = []
                     precip = list2float(json_extract(wjson, ["hourly", "rain"])[0])
-                    plt.simple_bar(times, precip, width = 100, title = "Rain Precipitation")
+                    temp_2m = list2float(json_extract(wjson, ["hourly", "temperature_2m"])[0])
+                    ws_10m = list2float(json_extract(wjson, ["hourly", "windspeed_10m"])[0])
+                    plt.simple_bar(times, temp_2m, width = 50, title = "Temperature (" + str(wind_unit) + ")", color = "red")
                     plt.show()
-                    pass # continue building chart display systems
+                    print(" ")
+                    plt.simple_bar(times, precip, width = 50, title = "Rain Precipitation (" + str(precip_unit) + ")", color = "blue")
+                    plt.show()
+                    print(" ")
+                    plt.simple_bar(times, ws_10m, width = 50, title = "Wind Speed (" + str(wind_unit) + ")", color = "green")
+                    plt.show()
                     ans = input("> ")
                     if ans == "quit":
                         cs()
