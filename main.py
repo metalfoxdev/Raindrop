@@ -512,7 +512,10 @@ while True:
                 quit()
             print("Pick a location: \n")
             for x in range(len(results)):
-                print(str("[" + str(x+1) + "] " + results[x]["name"] + ", " + results[x]["admin1"] + ", " + results[x]["country"] + " (" + results[x]["timezone"].replace("_", " ") + ")"))
+                try:
+                    print(str("[" + str(x+1) + "] " + results[x]["name"] + ", " + results[x]["admin1"] + ", " + results[x]["country"] + " (" + results[x]["timezone"].replace("_", " ") + ")"))
+                except KeyError:
+                    print(str("[" + str(x+1) + "] " + results[x]["name"] + ", " + results[x]["country_code"] + " (" + results[x]["timezone"].replace("_", " ") + ")"))
             ans = input("> ")
             try:
                 if int(ans) > 10 or int(ans) < 1:
@@ -521,7 +524,10 @@ while True:
                     pass
                 else:
                     try:
-                        location_name = str(results[int(ans)-1]["name"] + ", " + results[int(ans)-1]["admin1"])
+                        try:
+                            location_name = str(results[int(ans)-1]["name"] + ", " + results[int(ans)-1]["admin1"])
+                        except KeyError:
+                            location_name = str(results[int(ans)-1]["name"] + ", " + results[int(ans)-1]["country_code"])
                         latitude = results[int(ans)-1]["latitude"]
                         longitude = results[int(ans)-1]["longitude"]
                         loc_chosen = True
@@ -565,7 +571,7 @@ while True:
         cs()
         print("Your settings are as follows:")
         print(" ")
-        print("Location: " + location_name.title())
+        print("Location: " + location_name)
         print("Precipitation Unit: " + precip_unit)
         print("Temperature Unit: " + temp_unit)
         print("Wind Speed Unit: " + wind_unit)
@@ -574,6 +580,7 @@ while True:
         ans = input("\n> ")
         if ans == "quit":
             quit()
+            cs()
         else:
             pass
         cs()
@@ -595,7 +602,7 @@ while True:
             pickle.dump(wind_unit, f)
             f.close()
             f = open("location_name.rdd", "wb")
-            pickle.dump(location_name.title(), f)
+            pickle.dump(location_name, f)
             f.close()
             config.write("latitude.rdd")
             config.write("longitude.rdd")
