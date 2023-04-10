@@ -407,9 +407,9 @@ while True:
                     cs()
                     hourly_output = []
                     for x in range(len(json_extract(wjson, ["hourly", "time"])[0])):
-                        if datetime.fromisoformat(json_extract(wjson, ["hourly", "time"])[0][x]).day == datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice-1]).day:
+                        if datetime.fromisoformat(json_extract(wjson, ["hourly", "time"])[0][x]).day == datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).day:
                             hourly_output.append(create_hourly_entry(datetime.fromisoformat(json_extract(wjson, ["hourly", "time"])[0][x]).hour, json_extract(wjson, ["hourly", "temperature_2m"])[0][x], json_extract(wjson, ["hourly", "rain"])[0][x], json_extract(wjson, ["hourly", "weathercode"])[0][x], json_extract(wjson, ["hourly", "windspeed_10m"])[0][x], json_extract(wjson, ["hourly", "winddirection_10m"])[0][x], json_extract(wjson, ["hourly", "snowfall"])[0][x], json_extract(wjson, ["hourly", "precipitation_probability"])[0][x], json_extract(wjson, ["hourly", "snow_depth"])[0][x]))
-                    print(colored(seperator + "Hourly Forecast for " + days[datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice-1]).weekday()] + ", " + str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice-1]).day) + "/" + str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice-1]).month) + "/" +  str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice-1]).year) + seperator, "white"))
+                    print(colored(seperator + "Hourly Forecast for " + days[datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).weekday()] + ", " + str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).day) + "/" + str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).month) + "/" +  str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).year) + seperator, "white"))
                     for x in range(len(hourly_output)):
                         print("\n" + spacer + hourly_output[x])
                     ans = input("> ")
