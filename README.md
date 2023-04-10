@@ -11,6 +11,10 @@ Raindrop is a slick and intuitive, free and open source weather app for the linu
 * 😃 Intuitive weather display system, colour coding and all!
 * ⛔ No ads, tracking or analytics, just the weather and nothing else!
 
+## Roadmap
+
+Chart display system
+
 ## Installation
 
 1. Ensure that python3 and pip are installed on your system, most Linux distros come with python3 and pip pre-installed. If your distro does not have python3 and pip installed then you can install it using one of these commands:
