@@ -1,1 +1,1 @@
-requests pyfiglet termcolor
+requests pyfiglet termcolor plotext

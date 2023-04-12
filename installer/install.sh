@@ -1,4 +1,4 @@
-version="1.2"
+version="1.3"
 clear
 echo RaindropInstaller for v$version
 echo WARNING: Before running this installer, ensure python3 and pip are installed on your system. \ Press ENTER to continue...

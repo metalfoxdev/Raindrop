@@ -11,7 +11,7 @@ import time
 import subprocess
 import plotext as plt
 
-version = "1.2"
+version = "1.3"
 seperator = "----------------------------------------"
 spacer = "                                        "
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
