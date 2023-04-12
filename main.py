@@ -495,6 +495,12 @@ while True:
                         quit()
                     elif ans == "back":
                         mode = "main"
+                    elif ans == "refresh":
+                        cs()
+                        print("retrieving weather...")
+                        wjson = requests.get(wurl).content
+                        wjson = json.loads(wjson)
+                        print("weather retrieved successfully")
 
 
     else:
