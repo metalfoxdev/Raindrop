@@ -13,7 +13,7 @@ Raindrop is a slick and intuitive, free and open source weather app for the linu
 
 ## Roadmap
 
-Chart display system
+Chart display system [Done!]
 
 ## Installation
 
