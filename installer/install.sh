@@ -4,7 +4,7 @@ echo RaindropInstaller for v$version
 echo WARNING: Before running this installer, ensure python3 and pip are installed on your system. \ Press ENTER to continue...
 read
 echo Installing pip dependencies...
-pip3 install requests pyfiglet termcolor
+pip3 install requests pyfiglet termcolor plotext
 clear
 echo Getting username
 usrname=$(whoami)
