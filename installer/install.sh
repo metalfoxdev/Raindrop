@@ -39,4 +39,5 @@ echo "Categories=Utility;Application;" >> raindrop.desktop
 echo copying desktop file to applications
 mv "/home/$usrname/.local/share/RaindropWeather/raindrop.desktop" "/home/$usrname/.local/share/applications/raindrop.desktop"
 clear
-echo Installation complete!
+echo Installation complete! Press ENTER to exit the installer...
+read
