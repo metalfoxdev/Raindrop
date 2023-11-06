@@ -20,6 +20,11 @@ clear
 echo getting main.py
 curl -o main.py "https://raw.githubusercontent.com/metalfoxdev/Raindrop/v$version/main.py"
 clear
+echo creating executable
+echo "python3 /home/$usrname/.local/share/RaindropWeather/main.py" >> raindrop
+chmod u+x raindrop
+mv raindrop /home/$usrname/.local/bin/
+clear
 echo writing desktop file
 echo "[Desktop Entry]" >> raindrop.desktop
 echo "Version=$version" >> raindrop.desktop
