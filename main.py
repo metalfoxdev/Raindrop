@@ -467,21 +467,31 @@ while True:
                 cs()
                 if chart_mode == "hourly":
                     cs()
-                    temp = []
+                    tmp = []
                     times = []
+                    temp_2m = []
+                    ws_10m = []
+                    precip = []
                     for x in range(len(json_extract(wjson, ["hourly", "time"])[0])):
                         if datetime.fromisoformat(json_extract(wjson, ["hourly", "time"])[0][x]).day == calendar.day:
-                            temp.append(str(json_extract(wjson, ["hourly", "time"])[0][x]))
-                    for x in range(len(temp)):
-                        if datetime.fromisoformat(temp[x]).hour == calendar.hour:
+                            tmp.append(str(json_extract(wjson, ["hourly", "time"])[0][x]))
+                    for x in range(len(tmp)):
+                        if datetime.fromisoformat(tmp[x]).hour == calendar.hour:
                             times.append("Now")
-                        if datetime.fromisoformat(temp[x]).hour > calendar.hour:
-                            times.append(str(datetime.fromisoformat(temp[x]).hour) + ":00")
-                    precip = []
-                    precip = list2float(json_extract(wjson, ["hourly", "rain"])[0])
-                    temp_2m = list2float(json_extract(wjson, ["hourly", "temperature_2m"])[0])
-                    ws_10m = list2float(json_extract(wjson, ["hourly", "windspeed_10m"])[0])
-                    plt.simple_bar(times, temp_2m, width = 50, title = "Temperature (" + str(wind_unit) + ")", color = "red")
+                            temp_2m.append(json_extract(wjson, ["hourly", "temperature_2m"])[0][x])
+                            precip.append(json_extract(wjson, ["hourly", "rain"])[0][x])
+                            ws_10m.append(json_extract(wjson, ["hourly", "windspeed_10m"])[0][x])
+                        elif datetime.fromisoformat(tmp[x]).hour > calendar.hour:
+                            times.append(str(datetime.fromisoformat(tmp[x]).hour) + ":00")
+                            temp_2m.append(json_extract(wjson, ["hourly", "temperature_2m"])[0][x])
+                            precip.append(json_extract(wjson, ["hourly", "rain"])[0][x])
+                            ws_10m.append(json_extract(wjson, ["hourly", "windspeed_10m"])[0][x])
+                        elif datetime.fromisoformat(tmp[x]).hour < calendar.hour:
+                            pass
+                    precip = list2float(precip)
+                    temp_2m = list2float(temp_2m)
+                    ws_10m = list2float(ws_10m)
+                    plt.simple_bar(times, temp_2m, width = 50, title = "Temperature (" + str(temp_unit) + ")", color = "red")
                     plt.show()
                     print(" ")
                     plt.simple_bar(times, precip, width = 50, title = "Rain Precipitation (" + str(precip_unit) + ")", color = "blue")
