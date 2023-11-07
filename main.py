@@ -248,7 +248,7 @@ def create_daily_entry(date, month, day, weathercode, temperature_2m_min, temper
 def list2float(list_obj):
     output = []
     for x in range(len(list_obj)):
-        output.append(float(list_obj[x]))
+        output.append(int(list_obj[x]))
     return output
 
 while True:
