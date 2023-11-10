@@ -332,6 +332,7 @@ while True:
                 print(spacer + colored("[", "white") + colored("1", "light_green") + colored("]", "white") + colored(" Hourly", "light_yellow"))
                 print(spacer + colored("[", "white") + colored("2", "light_green") + colored("]", "white") + colored(" Daily", "light_yellow"))
                 print(spacer + colored("[", "white") + colored("3", "light_green") + colored("]", "white") + colored(" Hourly Charts", "light_yellow"))
+                print(colored("\nType 'back' to go back a menu, Type 'quit' to close the program", "white"))
                 ans = input("> ")
                 if ans == "quit":
                     cs()
@@ -389,6 +390,7 @@ while True:
                     print(colored(seperator + "Hourly Forecast" + seperator, "white"))
                     for x in range(len(hourly_output)):
                         print("\n" + spacer + hourly_output[x])
+                    print(colored("\nType 'back' to go back a menu, Type 'quit' to close the program", "white"))
                     ans = input("> ")
                     if ans == "quit":
                         cs()
@@ -412,6 +414,7 @@ while True:
                     print(colored(seperator + "Hourly Forecast for " + days[datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).weekday()] + ", " + str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).day) + "/" + str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).month) + "/" +  str(datetime.fromisoformat(json_extract(wjson, ["daily", "time"])[0][day_choice]).year) + seperator, "white"))
                     for x in range(len(hourly_output)):
                         print("\n" + spacer + hourly_output[x])
+                    print(colored("\nType 'back' to go back a menu, Type 'quit' to close the program", "white"))
                     ans = input("> ")
                     if ans == "quit":
                         cs()
@@ -442,7 +445,7 @@ while True:
                 print(colored(seperator + "Daily Forecast" + seperator, "white"))
                 for x in range(len(daily_output)):
                     print("\n" + spacer + colored("[", "white") + colored(str(x+1), "light_green") + colored("] ", "white") + daily_output[x])
-
+                print(colored("\nType 'back' to go back a menu, Type 'quit' to close the program", "white"))
                 ans = input("> ")
                 if ans == "quit":
                     cs()
@@ -499,6 +502,7 @@ while True:
                     print(" ")
                     plt.simple_bar(times, ws_10m, width = 50, title = "Wind Speed (" + str(wind_unit) + ")", color = "green")
                     plt.show()
+                    print(colored("\nType 'back' to go back a menu, Type 'quit' to close the program", "white"))
                     ans = input("> ")
                     if ans == "quit":
                         cs()
